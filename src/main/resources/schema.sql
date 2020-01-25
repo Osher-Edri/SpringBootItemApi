@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS item;
+ 
+CREATE TABLE item (
+  id INT AUTO_INCREMENT  PRIMARY KEY,
+  item_no VARCHAR(250) NOT NULL,
+  name VARCHAR(250) NOT NULL,
+  amount INT(250) NOT NULL,
+  inventory_code VARCHAR(250) NOT NULL 
+);
