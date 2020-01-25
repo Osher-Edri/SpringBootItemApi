@@ -43,6 +43,7 @@ public class ItemController {
 	@Autowired
 	private ItemRepository itemRepository;
 	
+	//List of items
 	@GetMapping("/items")
 	public List<Item> getAllItems(){
 		System.out.println();
