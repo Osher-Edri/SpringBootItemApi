@@ -1,4 +1,4 @@
-# SpringBootItemApi
+# Spring Boot Item Api
 spring-boot application with a REST controller, which expose a Swagger API catalog
 
 - Java
