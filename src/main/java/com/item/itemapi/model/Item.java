@@ -7,28 +7,26 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
 
-
+@ApiModel(description = "All details about the Item. ")
 @Entity
 @Table(name = "item")
 public class Item implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
+    
+    @ApiModelProperty(notes = "The database generated item id")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-   
-    private Long itemNo;
+	private Long itemNo;
     private String name;
     private Integer amount;
-    private String inventoryCode;
-    //CHECK: need to be Long but it's get error java.lang.NumberFormatException: For input string: "00FF123"
-    
+    private String inventoryCode;    
 
-
-    public Item() {
-    	
+    public Item() {    	
     }
     
     public Item(Long itemNo, String name, Integer amount, String inventoryCode) {
@@ -37,9 +35,7 @@ public class Item implements Serializable {
     	this.amount = amount;
     	this.inventoryCode = inventoryCode;
     }
-    
-    
-
+       
     public Long getId() {
         return id;
     }
@@ -48,7 +44,8 @@ public class Item implements Serializable {
         this.id = id;
     }
     
-    @Column(name = "item_no", nullable = false)
+    @ApiModelProperty(notes = "The item itemNo")
+	@Column(name = "item_no", nullable = false)
     public Long getItemno() {
         return itemNo;
     }
@@ -61,19 +58,19 @@ public class Item implements Serializable {
     public void setItemno(Long itemno) {
         this.itemNo = itemno;
     }
-
+    
+    @ApiModelProperty(notes = "The item name")
     @Column(name = "name", nullable = false)
     public String getName() {
         return name;
     }
 
- 
-
     public void setName(String name) {
         this.name = name;
     }
 
-    @Column(name = "amount", nullable = false)
+    @ApiModelProperty(notes = "The item amount")
+	@Column(name = "amount", nullable = false)
     public Integer getAmount() {
         return amount;
     }
@@ -87,7 +84,8 @@ public class Item implements Serializable {
         this.amount = amount;
     }
     
-    @Column(name = "inventory_code", nullable = false)
+    @ApiModelProperty(notes = "The item inventory code")
+	@Column(name = "inventory_code", nullable = false)
     public String getInventoryCode() {
         return inventoryCode;
     }
