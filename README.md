@@ -8,7 +8,7 @@ spring-boot application with a REST controller, which expose a Swagger API catal
 - Docker
 - Angular 
 
-The application needs to expose the following APIs:
+The application expose the following APIs:
 
 * List of the inventory items list (item no, name, amount, inventory code). # (done)
 * Read item details (by item no). # (done)
